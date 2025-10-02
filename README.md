@@ -10,10 +10,6 @@ A simple User Management App built with React that allows you to view, and add u
  - View each users details
  - Responsive and simple UI
 
-## Switch to another file
-
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
-
 ## Tech Stack
 
  - **Frontend:** React
