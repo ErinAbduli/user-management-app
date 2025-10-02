@@ -50,7 +50,7 @@ const UserCard = ({ user }) => {
 						<Button
 							variant="outline"
 							onClick={() =>
-								navigate(`/users/${user.id}`, {
+								navigate(`/user/${user.id}`, {
 									state: { user },
 								})
 							}

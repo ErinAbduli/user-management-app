@@ -1,9 +1,16 @@
 import React from "react";
-import { Button, Field, Fieldset, Input, Stack } from "@chakra-ui/react";
+import {
+	Button,
+	Field,
+	Fieldset,
+	Input,
+	Stack,
+	IconButton,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { toaster } from "../components/ui/toaster";
-
+import { IoChevronBack } from "react-icons/io5";
 const AddUser = ({ onAddUserSubmit }) => {
 	const [formData, setFormData] = useState({
 		name: "",
@@ -16,7 +23,7 @@ const AddUser = ({ onAddUserSubmit }) => {
 
 	const navigate = useNavigate();
 
-	let id = 11;
+	let id = Math.floor(Math.random() * 1000);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -33,6 +40,17 @@ const AddUser = ({ onAddUserSubmit }) => {
 
 	return (
 		<div>
+			<IconButton
+				position="fixed"
+				top="15px"
+				left="15px"
+				onClick={() => navigate(-1)}
+				size="md"
+				zIndex="1000"
+				variant="ghost"
+			>
+				<IoChevronBack />
+			</IconButton>
 			<form onSubmit={handleSubmit}>
 				<Fieldset.Root
 					size="md"

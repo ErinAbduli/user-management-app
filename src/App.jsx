@@ -25,7 +25,7 @@ function App() {
 	}, []);
 
 	const onAddUserSubmit = (newUser) => {
-		setUsers([...users, newUser]);
+		setUsers([newUser, ...users]);
 	};
 
 	return (

@@ -1,7 +1,6 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import UserCard from "./UserCard";
-import axios from "axios";
 import { Input, InputGroup, Kbd, Button } from "@chakra-ui/react";
 import { LuSearch } from "react-icons/lu";
 import { useNavigate } from "react-router";
@@ -12,20 +11,22 @@ const UserList = ({ users }) => {
 
 	const filteredUsers = users.filter((user) => {
 		if (search === "") {
-			return user;
+			return true;
 		}
-		user.name.toLowerCase().includes(search.toLowerCase()) ||
-			user.email.toLowerCase().includes(search.toLowerCase());
+		return (
+			user.name.toLowerCase().includes(search.toLowerCase()) ||
+			user.email.toLowerCase().includes(search.toLowerCase())
+		);
 	});
 
 	return (
 		<div className="h-screen flex flex-col gap-4 justify-start items-center pt-10">
-			<div className="w-full flex justify-center items-end gap-4">
+			<div className="w-full flex flex-col sm:flex-row justify-center items-center sm:items-end gap-4">
 				<InputGroup
 					startElement={<LuSearch />}
 					endElement={<Kbd>⌘K</Kbd>}
-					width={"400px"}
-					marginTop={"70px"}
+					marginTop="70px"
+					width={{ base: "70%", sm: "300px" }}
 				>
 					<Input
 						onChange={(e) => setSearch(e.target.value)}
