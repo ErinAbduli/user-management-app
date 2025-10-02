@@ -38,7 +38,12 @@ const UserCard = ({ user }) => {
 							alignItems="center"
 							gap="1"
 						>
-							<MdWorkOutline /> {user.company.name}
+							<MdWorkOutline />{" "}
+							{user.company.name
+								? user.company.name
+								: user.company
+								? user.company
+								: "N/A"}
 						</Text>
 					</Stack>
 					<Stack>
