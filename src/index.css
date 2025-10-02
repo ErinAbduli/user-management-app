@@ -1,1 +1,40 @@
+@font-face {
+	font-family: "InterRegular";
+	src: url("./assets/fonts/Inter_18pt-Regular.ttf");
+}
+
+@font-face {
+	font-family: "InterLight";
+	src: url("./assets/fonts/Inter_18pt-Light.ttf");
+}
+
+@font-face {
+	font-family: "InterMedium";
+	src: url("./assets/fonts/Inter_18pt-Medium.ttf");
+}
+
+@font-face {
+	font-family: "InterSemiBold";
+	src: url("./assets/fonts/Inter_18pt-SemiBold.ttf");
+}
+
+@font-face {
+	font-family: "InterBold";
+	src: url("./assets/fonts/Inter_18pt-Bold.ttf");
+}
+
+@font-face {
+	font-family: "InterExtraBold";
+	src: url("./assets/fonts/Inter_18pt-ExtraBold.ttf");
+}
+
 @import "tailwindcss";
+
+@theme {
+	--font-inter: "InterRegular", sans-serif;
+	--font-interBold: "InterBold", sans-serif;
+	--font-interLight: "InterLight", sans-serif;
+	--font-interMedium: "InterMedium", sans-serif;
+	--font-interSemiBold: "InterSemiBold", sans-serif;
+	--font-interExtraBold: "InterExtraBold", sans-serif;
+}
